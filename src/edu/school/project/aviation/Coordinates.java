@@ -1,5 +1,7 @@
 package edu.school.project.aviation;
 
+import static java.lang.Math.abs;
+
 public class Coordinates {
     private int longitude;
     private int latitude;
@@ -27,5 +29,9 @@ public class Coordinates {
         this.longitude += coordinates[0];
         this.latitude += coordinates[1];
         this.height = coordinates[2];
+    }
+
+    public int mixCoordinates() {
+        return abs(getHeight() * getLatitude() * getLongitude());
     }
 }
