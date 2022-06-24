@@ -14,8 +14,7 @@ public class WeatherProvider {
     }
 
     public int getCurrentWeather(Coordinates coordinates) {
-        int index = (coordinates.mixCoordinates() / seed) % 4;
-        return index;
+        return (coordinates.mixCoordinates() / seed) % 4;
     }
 
     protected void changeWeather() {
