@@ -6,4 +6,5 @@ import edu.school.project.tower.WeatherTower;
 public interface Flyable {
     void updateConditions();
     void registerTower(Tower tower);
+    String toString();
 }

@@ -2,6 +2,7 @@ package edu.school.project.aviation;
 
 import edu.school.project.tower.Tower;
 import edu.school.project.tower.WeatherTower;
+import jdk.jfr.Unsigned;
 
 public class JetPlane extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
@@ -22,5 +23,10 @@ public class JetPlane extends Aircraft implements Flyable {
     @Override
     public void registerTower(Tower tower) {
         this.weatherTower = (WeatherTower) tower;
+    }
+
+    @Override
+    public String toString(){
+        return "#" + name + "(" + id + ")";
     }
 }

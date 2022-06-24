@@ -21,4 +21,9 @@ public class Helicopter extends Aircraft implements Flyable{
     public void registerTower(Tower tower){
         this.weatherTower = (WeatherTower) tower;
     }
+
+    @Override
+    public String toString(){
+        return "#" + name + "(" + id + ")";
+    }
 }

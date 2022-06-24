@@ -3,12 +3,12 @@ package edu.school.project.tower;
 import edu.school.project.aviation.AircraftFactory;
 import edu.school.project.aviation.Flyable;
 import edu.school.project.exception.AvajLauncherException;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+@SuppressWarnings({"FieldMayBeFinal", "MismatchedQueryAndUpdateOfCollection"})
 abstract public class Tower {
     int duration;
     String[] params;
@@ -24,17 +24,17 @@ abstract public class Tower {
                     System.out.println("Invalid steps count");
                 }
             }
-
-            while (scanner.hasNext()){
-                String line = scanner.nextLine();
-                params = line.split(" ");
-                register(AircraftFactory.newAircraft(
-                        params[0],
-                        params[1],
-                        Integer.parseInt(params[2]),
-                        Integer.parseInt(params[3]),
-                        Integer.parseInt(params[4])));
-            }
+                while (scanner.hasNext()){
+                    String line = scanner.nextLine();
+                    params = line.split(" ");
+                    register(AircraftFactory.newAircraft(
+                            params[0],
+                            params[1],
+                            Integer.parseInt(params[2]),
+                            Integer.parseInt(params[3]),
+                            Integer.parseInt(params[4])));
+                }
+//            }
             scanner.close();
         } catch(FileNotFoundException e){
             throw new AvajLauncherException("File not found!");
