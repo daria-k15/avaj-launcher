@@ -47,11 +47,21 @@ abstract public class Tower {
         }
     }
 
+    protected void setTower(Tower tower){
+        for (Flyable flyable : observes)
+            flyable.registerTower(tower);
+    }
+
     private void register(Flyable flyable){
         observes.add(flyable);
         System.out.println("Tower registered: " + flyable.toString() + " to weather tower");
     }
 
+    protected void changeCondition(){
+        for (Flyable flyable : observes){
+            flyable.updateConditions();
+        }
+    }
     private void unregister(Flyable flyable){
         observes.remove(flyable);
         System.out.println("Tower unregistered: " + flyable.toString() + " from weather tower");

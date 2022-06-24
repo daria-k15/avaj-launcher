@@ -8,7 +8,7 @@ public class WeatherTower extends Tower {
     public WeatherTower( String filePath){
         super.initTower(filePath);
         weatherProvider = weatherProvider.getWeatherProvider();
-//        setTower(this);
+        setTower(this);
     }
 
     public int getWeather(Coordinates coordinates){

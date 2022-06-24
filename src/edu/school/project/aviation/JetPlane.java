@@ -1,5 +1,6 @@
 package edu.school.project.aviation;
 
+import edu.school.project.Logger;
 import edu.school.project.tower.Tower;
 import edu.school.project.tower.WeatherTower;
 import jdk.jfr.Unsigned;
@@ -17,7 +18,7 @@ public class JetPlane extends Aircraft implements Flyable {
     public void updateConditions() {
         int index = weatherTower.getWeather(coordinates);
         coordinates.updateCoordinates(weatherRules[index]);
-        /** Logger **/
+        Logger.logConditions(this, weatherTower.getWeather(coordinates));
     }
 
     @Override
@@ -27,6 +28,6 @@ public class JetPlane extends Aircraft implements Flyable {
 
     @Override
     public String toString(){
-        return "#" + name + "(" + id + ")";
+        return "JetPlane" + "#" + name + "(" + id + ")";
     }
 }
