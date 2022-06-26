@@ -1,6 +1,4 @@
-package edu.school.project.tower;
-
-import edu.school.project.Logger;
+package heveline.edu.school.project.tower;
 
 public class Simulation {
     public static void startSimulation(WeatherTower weatherTower){

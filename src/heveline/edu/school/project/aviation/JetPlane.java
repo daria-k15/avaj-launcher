@@ -1,14 +1,15 @@
-package edu.school.project.aviation;
+package heveline.edu.school.project.aviation;
 
-import edu.school.project.Logger;
-import edu.school.project.tower.Tower;
-import edu.school.project.tower.WeatherTower;
+import heveline.edu.school.project.Logger;
+import heveline.edu.school.project.tower.Tower;
+import heveline.edu.school.project.tower.WeatherTower;
 
-public class Baloon extends Aircraft implements Flyable {
+public class JetPlane extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
-    int[][] weatherRules = {{2, 0, 4}, {0, 0, 5}, {0, 0, -3}, {0, 0, -15}};
 
-    Baloon(String name, Coordinates coordinates) {
+    int[][] weatherRules = {{0, 10, 2}, {0, 5, 0}, {0, 1, 0}, {0, 0, -7}};
+
+    JetPlane(String name, Coordinates coordinates) {
         super(name, coordinates);
     }
 
@@ -26,6 +27,6 @@ public class Baloon extends Aircraft implements Flyable {
 
     @Override
     public String toString(){
-        return "Baloon#" + name + "(" + id + ")";
+        return "JetPlane" + "#" + name + "(" + id + ")";
     }
 }

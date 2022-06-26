@@ -1,6 +1,6 @@
-package edu.school.project.tower;
+package heveline.edu.school.project.tower;
 
-import edu.school.project.aviation.Coordinates;
+import heveline.edu.school.project.aviation.Coordinates;
 
 public class WeatherProvider {
     private static WeatherProvider weatherProvider;

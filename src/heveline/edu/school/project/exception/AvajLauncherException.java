@@ -1,4 +1,4 @@
-package edu.school.project.exception;
+package heveline.edu.school.project.exception;
 
 public class AvajLauncherException extends RuntimeException {
     public AvajLauncherException(String message) {

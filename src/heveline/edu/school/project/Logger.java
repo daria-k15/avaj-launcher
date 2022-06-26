@@ -1,7 +1,7 @@
-package edu.school.project;
+package heveline.edu.school.project;
 
-import edu.school.project.aviation.Aircraft;
-import edu.school.project.aviation.Flyable;
+import heveline.edu.school.project.aviation.Aircraft;
+import heveline.edu.school.project.aviation.Flyable;
 
 import java.io.*;
 import java.util.HashMap;

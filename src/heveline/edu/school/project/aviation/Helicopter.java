@@ -1,8 +1,8 @@
-package edu.school.project.aviation;
+package heveline.edu.school.project.aviation;
 
-import edu.school.project.Logger;
-import edu.school.project.tower.Tower;
-import edu.school.project.tower.WeatherTower;
+import heveline.edu.school.project.Logger;
+import heveline.edu.school.project.tower.Tower;
+import heveline.edu.school.project.tower.WeatherTower;
 
 public class Helicopter extends Aircraft implements Flyable{
     WeatherTower weatherTower;

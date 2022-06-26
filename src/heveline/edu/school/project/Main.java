@@ -1,8 +1,8 @@
-package edu.school.project;
+package heveline.edu.school.project;
 
-import edu.school.project.exception.AvajLauncherException;
-import edu.school.project.tower.Simulation;
-import edu.school.project.tower.WeatherTower;
+import heveline.edu.school.project.exception.AvajLauncherException;
+import heveline.edu.school.project.tower.Simulation;
+import heveline.edu.school.project.tower.WeatherTower;
 
 public class Main {
     public static void main(String[] args) {

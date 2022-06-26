@@ -1,4 +1,4 @@
-package edu.school.project.aviation;
+package heveline.edu.school.project.aviation;
 
 abstract public class Aircraft {
     protected long id;
