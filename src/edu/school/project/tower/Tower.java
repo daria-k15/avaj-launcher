@@ -1,5 +1,6 @@
 package edu.school.project.tower;
 
+import edu.school.project.Logger;
 import edu.school.project.aviation.AircraftFactory;
 import edu.school.project.aviation.Flyable;
 import edu.school.project.exception.AvajLauncherException;
@@ -24,17 +25,16 @@ abstract public class Tower {
                     System.out.println("Invalid steps count");
                 }
             }
-                while (scanner.hasNext()){
-                    String line = scanner.nextLine();
-                    params = line.split(" ");
-                    register(AircraftFactory.newAircraft(
-                            params[0],
-                            params[1],
-                            Integer.parseInt(params[2]),
-                            Integer.parseInt(params[3]),
-                            Integer.parseInt(params[4])));
-                }
-//            }
+            while (scanner.hasNext()){
+                String line = scanner.nextLine();
+                params = line.split(" ");
+                register(AircraftFactory.newAircraft(
+                        params[0],
+                        params[1],
+                        Integer.parseInt(params[2]),
+                        Integer.parseInt(params[3]),
+                        Integer.parseInt(params[4])));
+            }
             scanner.close();
         } catch(FileNotFoundException e){
             throw new AvajLauncherException("File not found!");
@@ -54,7 +54,7 @@ abstract public class Tower {
 
     private void register(Flyable flyable){
         observes.add(flyable);
-        System.out.println("Tower registered: " + flyable.toString() + " to weather tower");
+        Logger.logRegistration(flyable);
     }
 
     protected void changeCondition(){

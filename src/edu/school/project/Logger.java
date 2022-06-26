@@ -1,38 +1,53 @@
 package edu.school.project;
 
 import edu.school.project.aviation.Aircraft;
+import edu.school.project.aviation.Flyable;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Logger {
     private static Logger logger;
     private static Map<Integer, String> messages = new HashMap<>();
-    private static Map<Integer, String> colors = new HashMap<>();
 
+    private static FileWriter myStream;
     public Logger(){
         if (logger != null){
             logger = new Logger();
         }
+        initOutput();
         initLogger();
-        initColors();
-    }
-    private void initLogger(){
-        messages.put(0, " * That's sunny day. Let's enjoy it!");
-        messages.put(1, " 💦 Raining... Let's stay home.");
-        messages.put(2, " 🌫 Can't see anything.");
-        messages.put(3, " ❄️ It's snowing. We're gonna crash.");
     }
 
-    private void initColors() {
-        colors.put(0, "\033[1;33m");
-        colors.put(1, "\033[1;34m");
-        colors.put(2, "\033[1;37m");
-        colors.put(3, "\033[1;30m");
-        colors.put(4, "\033[0m");
+    private void initOutput() {
+        try {
+            myStream = new FileWriter("simulation.txt");
+        } catch (IOException e){
+            System.out.println("Problem with creating file!");
+        }
+    }
+    private void initLogger(){
+        messages.put(0, " ☀ That's sunny day. Let's enjoy it!\n");
+        messages.put(1, " 💦 Raining... Let's stay home.\n");
+        messages.put(2, " 🌫 Can't see anything.\n");
+        messages.put(3, " ❄️ It's snowing. We're gonna crash.\n");
     }
 
     public static void logConditions(Aircraft aircraft, int weatherIndex){
-        System.out.println(colors.get(weatherIndex) + aircraft.toString() + messages.get(weatherIndex) + colors.get(4));
+        try {
+            myStream.write(aircraft.toString() + messages.get(weatherIndex));
+        } catch (Exception e) {
+            System.out.println("Cannot write to file");
+        }
     }
+
+    public static void logRegistration(Flyable flyable) {
+        try {
+            myStream.write("Tower registered: " + flyable.toString() + " to weather tower\n");
+        } catch (Exception e){
+            System.out.println("Cannot write registration to file");
+        }
+    }
+
 }

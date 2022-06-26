@@ -9,6 +9,7 @@ public class Main {
         if (args.length != 1 || args[0] == null){
             throw new AvajLauncherException("Put scenario file as argument!");
         }
+        Logger logger = new Logger();
         Simulation.startSimulation(new WeatherTower(args[0]));
     }
 }
