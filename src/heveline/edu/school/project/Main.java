@@ -9,7 +9,11 @@ public class Main {
         if (args.length != 1 || args[0] == null){
             throw new AvajLauncherException("Put scenario file as argument!");
         }
-        Logger logger = new Logger();
-        Simulation.startSimulation(new WeatherTower(args[0]));
+        if (args[0].endsWith("scenario.txt") || args[0].endsWith("scenario.md5")){
+            Logger logger = new Logger();
+            Simulation.startSimulation(new WeatherTower(args[0]));
+        } else {
+            throw new AvajLauncherException("Invalid argument! File should be scenario.txt or scenario.md5");
+        }
     }
 }

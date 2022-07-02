@@ -5,7 +5,7 @@ import heveline.edu.school.project.aviation.Coordinates;
 public class WeatherTower extends Tower {
     WeatherProvider weatherProvider;
 
-    public WeatherTower( String filePath){
+    public WeatherTower(String filePath){
         super.initTower(filePath);
         weatherProvider = weatherProvider.getWeatherProvider();
         setTower(this);

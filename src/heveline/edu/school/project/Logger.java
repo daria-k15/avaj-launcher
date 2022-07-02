@@ -11,7 +11,7 @@ public class Logger {
     private static Logger logger;
     private static Map<Integer, String> messages = new HashMap<>();
 
-    private static FileWriter myStream;
+    public static FileWriter myStream;
     public Logger(){
         if (logger != null){
             logger = new Logger();
